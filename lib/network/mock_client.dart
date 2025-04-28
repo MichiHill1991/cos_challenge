@@ -9,8 +9,8 @@ class CosUserApiMock extends BaseClient {
   static final _statusCode = <int, Map<String, dynamic>>{
     200: {
       "id": "abcd-efgh-ijgk-mnop",
-      "first_name": "Michael",
-      "last_name": "Hill",
+      "firstName": "Michael",
+      "lastName": "Hill",
       "email": "michael.hill@mein-bankerl.de",
     },
     400: {"message": "Request body is faulted"},
@@ -28,8 +28,8 @@ class CosUserApiMock extends BaseClient {
         return _getResponseFromCode(400, request);
       }
 
-      await Future<void>.delayed(const Duration(seconds: 1));
-      var result = Random().nextInt(_statusCode.length + 1);
+      await Future<void>.delayed(const Duration(milliseconds: 100));
+      var result = Random().nextInt(_statusCode.length);
       var response = _statusCode.entries.toList()[result];
 
       return _getResponseFromCode(response.key, request);
@@ -40,17 +40,19 @@ class CosUserApiMock extends BaseClient {
 
   StreamedResponse _getResponseFromCode(int code, BaseRequest request) {
     if (!_statusCode.containsKey(code)) {
-      final body = _statusCode[500]!.values.first;
+      Map<String, dynamic> data = _statusCode[500]!;
+      String jsonString = jsonEncode(data);
       return StreamedResponse(
-        Stream.value(Uint8List.fromList(body!.codeUnits)),
+        Stream.value(Uint8List.fromList(utf8.encode(jsonString))),
         500,
         request: request,
       );
     }
 
-    final body = _statusCode[code]!.values.first;
+    Map<String, dynamic> data = _statusCode[code]!;
+    String jsonString = jsonEncode(data);
     return StreamedResponse(
-      Stream.value(Uint8List.fromList(body!.codeUnits)),
+      Stream.value(Uint8List.fromList(utf8.encode(jsonString))),
       code,
       request: request,
     );

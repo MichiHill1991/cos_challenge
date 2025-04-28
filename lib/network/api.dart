@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:cos_challenge/network/exception.dart';
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart';
 
 class CosUserApi {
@@ -22,6 +23,7 @@ class CosUserApi {
     if (response.statusCode == 200) {
       return jsonDecode(response.body);
     } else {
+      debugPrint("${response.statusCode}: Failed to login: ${response.body}");
       throw ServerException(
         response.statusCode,
         'Failed to login: ${response.body}',
