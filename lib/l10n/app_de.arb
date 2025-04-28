@@ -18,5 +18,14 @@
   "termsOfUse02": " ABG ",
   "termsOfUse03": "und die",
   "termsOfUse04": " Datenschutzrichtlinie ",
-  "termsOfUse05": "der Castle Tech GmbH"
+  "termsOfUse05": "der Castle Tech GmbH",
+  "homeTitle": "Home",
+  "cardTitle": "Fahrzeugsuche",
+  "cardSubtitle": "Bitte geben Sie eine gültige VIN ein.",
+  "enterVin": "Fahrgestellnummer (VIN)",
+  "search": "Suchen",
+  "vinEmptyError": "Bitte geben Sie die VIN ein.",
+  "vinLengthError": "Eine VIN muss genau 17 Zeichen lang sein.",
+  "vinSearchSuccess": "Fahrzeug erfolgreich gefunden!",
+  "vinSearchFailed": "Fahrzeug konnte nicht gefunden werden."
 }

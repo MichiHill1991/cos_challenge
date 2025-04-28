@@ -28,7 +28,7 @@ class CosUserApiMock extends BaseClient {
         return _getResponseFromCode(400, request);
       }
 
-      await Future<void>.delayed(const Duration(milliseconds: 100));
+      await Future<void>.delayed(const Duration(seconds: 1));
       var result = Random().nextInt(_statusCode.length);
       var response = _statusCode.entries.toList()[result];
 

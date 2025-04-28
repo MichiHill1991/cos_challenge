@@ -1,7 +1,9 @@
 import 'package:cos_challenge/network/exception.dart';
 import 'package:cos_challenge/pages/login/login_validator.dart';
 import 'package:cos_challenge/providers/auth_provider.dart';
+import 'package:cos_challenge/widgets/progress.dart';
 import 'package:cos_challenge/widgets/terms_of_use.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -59,11 +61,8 @@ class _LoginPageState extends ConsumerState<LoginPage> {
               const SizedBox(height: 24),
               ElevatedButton(
                 onPressed: _loading ? null : _submit,
-                onLongPress: _fillUp,
-                child:
-                    _loading
-                        ? const CircularProgressIndicator()
-                        : Text(_loc.login),
+                onLongPress: kDebugMode ? _fillUp : null,
+                child: _loading ? CosProgress() : Text(_loc.login),
               ),
             ],
           ),

@@ -18,5 +18,14 @@
   "termsOfUse02": " T&C ",
   "termsOfUse03": "and the",
   "termsOfUse04": " Privacy Policy ",
-  "termsOfUse05": "of Castle Tech GmbH"
+  "termsOfUse05": "of Castle Tech GmbH",
+  "homeTitle": "Home",
+  "cardTitle": "Car search",
+  "cardSubtitle": "Please enter a valid VIN.",
+  "enterVin": "chassis number (VIN)",
+  "search": "Search",
+  "vinEmptyError": "Please enter VIN.",
+  "vinLengthError": "A VIN must be exactly 17 characters long.",
+  "vinSearchSuccess": "Car found!",
+  "vinSearchFailed": "Car not found."
 }

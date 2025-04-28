@@ -29,7 +29,7 @@ class MyApp extends ConsumerWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      home: authState.isAuthenticated ? MyHomePage() : LoginPage(),
+      home: authState.isAuthenticated ? HomePage() : LoginPage(),
     );
   }
 }
