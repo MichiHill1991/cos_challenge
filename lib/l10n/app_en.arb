@@ -1,0 +1,22 @@
+{
+  "@@locale": "en",
+  "login": "Login",
+  "email": "Mail address",
+  "password": "Password",
+  "acceptPrivacy": "I accept the Privacy Policy",
+  "loginFailed": "Login failed",
+  "loginErrorInvalidMail": "Invalid mail address",
+  "loginErrorCharacterLength": "At least 6 character",
+  "loginErrorEmailEmpty": "Please enter your mail address",
+  "loginErrorPasswordEmpty": "Please enter password",
+  "loginErrorPrivacy": "Please accept our Privacy Policy",
+  "loginServerError400": "Please check your input.",
+  "loginServerError401": "Please check your input.",
+  "loginServerError403": "You are not authorized to access this page.",
+  "loginServerError500": "An unknown server error occurred. Please contact support.",
+  "termsOfUse01": " I hereby confirm that I have read and accept the",
+  "termsOfUse02": " T&C ",
+  "termsOfUse03": "and the",
+  "termsOfUse04": " Privacy Policy ",
+  "termsOfUse05": "of Castle Tech GmbH"
+}

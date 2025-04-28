@@ -1,0 +1,22 @@
+{
+  "@@locale": "de",
+  "login": "Login",
+  "email": "E-Mail-Adresse",
+  "password": "Passwort",
+  "acceptPrivacy": "Ich akzeptiere die Datenschutzerklärung",
+  "loginFailed": "Login fehlgeschlagen",
+  "loginErrorInvalidMail": "Ungültige E-Mail",
+  "loginErrorCharacterLength": "Mindestens 6 Zeichen",
+  "loginErrorEmailEmpty": "Bitte E-Mail-Adresse angeben",
+  "loginErrorPasswordEmpty": "Bitte Password angeben",
+  "loginErrorPrivacy": "Bitte akzeptieren Sie die Datenschutzerklärung",
+  "loginServerError400": "Überprüfen Sie bitte Ihre Eingaben.",
+  "loginServerError401": "Überprüfen Sie bitte Ihre Eingaben.",
+  "loginServerError403": "Sie haben keine Berechtigung für diese Seite.",
+  "loginServerError500": "Ein unbekannter Serverfehler ist aufgetreten, bitte kontaktieren Sie den Support.",
+  "termsOfUse01": "Hiermit bestätige ich, dass ich gelesen habe und akzeptiere die",
+  "termsOfUse02": " ABG ",
+  "termsOfUse03": "und die",
+  "termsOfUse04": " Datenschutzrichtlinie ",
+  "termsOfUse05": "der Castle Tech GmbH"
+}

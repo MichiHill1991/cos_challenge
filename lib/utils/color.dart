@@ -1,0 +1,47 @@
+import 'package:flutter/material.dart';
+
+class BrandColors {
+  static const Color white = Colors.white;
+  static const Color black = Colors.black;
+  static const Color transparent = Colors.transparent;
+  static const Color whiteSmoke = Color(0xFFF3F4F6);
+  static const Color black2 = Color(0xFF2F343E);
+  static const Color dimGrey = Color(0xFF474B57);
+  static const Color ghostWhite = Color(0xFFEEF1F7);
+  static const Color khaki = Color(0xFFFADF85);
+  static const Color cosYellow = Color(0xFFFCBF0F);
+  static const Color primaryYellow = Color(0xFFFFD452);
+  static const Color brandButtonBG = Color(0xFFFCBF28);
+  static const Color gold = Color(0xFFFFD200);
+  static const Color brandLight = Color(0xFFFCD15E);
+  static const Color textLight = Color(0xB34B4E53);
+  static const Color floralWhite = Color(0xFFF5F3ED);
+  static const Color neutralTransparent = Color(0x00FFFFFF);
+  static const Color darkGrey = Color(0xFF979797);
+  static const Color lightSteelBlue = Color(0xFFBAC5E5);
+  static const Color limeGreen = Color(0xFF3CB93C);
+  static const Color tomato = Color(0xFFFF5B5B);
+  static const Color ciBackground = Color(0xFF2E333D);
+  static const Color brand = Color(0xFFFCBF23);
+  static const Color neutral50 = Color(0xFFF3F3F3);
+  static const Color neutralWhite = Colors.white;
+  static const Color neutral200 = Color(0xFFAAAAAA);
+  static const Color neutral500 = Color(0xFF262626);
+  static const Color neutral400 = Color(0xFF474B57);
+  static const Color neutral300 = Color(0xFFB3B3B3);
+  static const Color lila = Color(0xFF5514B4);
+  static const Color grey94 = Colors.white70;
+  static const Color blueLight = Color(0xFFD9E5FF);
+  static const Color blueDark = Color(0xFF080331);
+  static const Color brandYellow = Color(0xFFFFD452);
+  static const Color neutralBlack = Colors.black;
+  static const Color neutral100 = Color(0xFFCCCCCC);
+  static const Color neutral600 = Color(0xFF111111);
+  static const Color successGreen = Color(0xFFCEF5CA);
+  static const Color successGreenDark = Color(0xFF114E0B);
+  static const Color warningYellow = Color(0xFFFCF8D8);
+  static const Color warningYellowDark = Color(0xFF5E5515);
+  static const Color errorRed = Color(0xFFF8E4E4);
+  static const Color errorRedDark = Color(0xFF3B0B0B);
+  static const Color focusState = Color(0xFF2D62FF);
+}

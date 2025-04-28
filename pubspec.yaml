@@ -1,0 +1,43 @@
+name: cos_challenge
+description: "App for CarOnSale Flutter Coding Challenge"
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.0
+
+dependencies:
+  flutter_localizations:
+    sdk: flutter
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flutter_launcher_icons: ^0.14.1
+  flutter_riverpod: ^2.4.0
+  http: ^1.2.0
+  intl: ^0.19.0
+  shared_preferences: ^2.2.0
+
+### How to run? --> flutter pub run flutter_launcher_icons:main
+### android: "ic_launcher_round"
+### ios: "AppIcon"
+flutter_icons:
+  ios: false
+  android: "rounded_x"
+  image_path: "assets/app_icon/rounded_x.png"
+
+dev_dependencies:
+  integration_test:
+    sdk: flutter
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  generate: true
+  uses-material-design: true
+  assets:
+    - assets/app_icon/
+    - assets/font/
+    - assets/images/
