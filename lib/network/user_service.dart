@@ -4,18 +4,16 @@ import 'package:cos_challenge/network/exception.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart';
 
-class CosUserApi {
+class UserService {
   final Client client;
 
-  CosUserApi({Client? client}) : client = client ?? Client();
+  UserService({Client? client}) : client = client ?? Client();
 
   static const String baseUrl = 'anyUrl';
 
   Future<Map<String, dynamic>> login(String email, String password) async {
-    final url = Uri.parse('$baseUrl/login');
-
     final response = await client.post(
-      url,
+      Uri.parse('$baseUrl/login'),
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode({'email': email, 'password': password}),
     );

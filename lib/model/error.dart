@@ -1,12 +1,16 @@
-class Error {
+class ErrorMessage {
   String msgKey;
   Params params;
   String message;
 
-  Error({required this.msgKey, required this.params, required this.message});
+  ErrorMessage({
+    required this.msgKey,
+    required this.params,
+    required this.message,
+  });
 
-  factory Error.fromJson(Map<String, dynamic> json) {
-    return Error(
+  factory ErrorMessage.fromJson(Map<String, dynamic> json) {
+    return ErrorMessage(
       msgKey: json["msgKey"],
       params: Params.fromJson(json["params"]),
       message: json["message"],

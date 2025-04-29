@@ -1,13 +1,13 @@
-import 'package:cos_challenge/network/api.dart';
-import 'package:cos_challenge/network/mock_client.dart';
+import 'package:cos_challenge/network/user_service.dart';
+import 'package:cos_challenge/network/user_service_mock.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  group('CosUserApi Tests', () {
-    late CosUserApi api;
+  group('UserService Tests', () {
+    late UserService api;
 
     setUp(() {
-      api = CosUserApi(client: CosUserApiMock());
+      api = UserService(client: UserServiceMock());
     });
 
     test('Login successful returns user data', () async {

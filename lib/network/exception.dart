@@ -18,3 +18,7 @@ extension ServerExceptionExtension on ServerException {
     return null;
   }
 }
+
+class DeserializationException implements Exception {
+  DeserializationException();
+}

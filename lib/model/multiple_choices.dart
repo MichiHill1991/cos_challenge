@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-List<MultipleChoices> errorFromJson(String str) {
+List<MultipleChoices> listFromJson(String str) {
   return List<MultipleChoices>.from(
     jsonDecode(str).map((x) => MultipleChoices.fromJson(x)),
   );

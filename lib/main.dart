@@ -1,6 +1,7 @@
-import 'package:cos_challenge/pages/home/home.dart';
+import 'package:cos_challenge/pages/auction/auction_page.dart';
 import 'package:cos_challenge/pages/login/login_page.dart';
-import 'package:cos_challenge/providers/auth_provider.dart';
+import 'package:cos_challenge/pages/vin_search/vin_search_page.dart';
+import 'package:cos_challenge/providers/data_provider.dart';
 import 'package:cos_challenge/utils/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -16,7 +17,14 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final authState = ref.watch(authProvider);
+    final authState = ref.watch(dataProvider);
+
+    Widget page = LoginPage();
+    if (authState.auction != null) {
+      page = AuctionPage(data: authState.auction!);
+    } else if (authState.isAuthenticated) {
+      page = VinSearchPage();
+    }
 
     return MaterialApp(
       title: 'COS Challenge',
@@ -29,7 +37,7 @@ class MyApp extends ConsumerWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      home: authState.isAuthenticated ? HomePage() : LoginPage(),
+      home: page,
     );
   }
 }

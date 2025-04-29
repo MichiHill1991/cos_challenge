@@ -1,6 +1,6 @@
 import 'package:cos_challenge/network/exception.dart';
 import 'package:cos_challenge/pages/login/login_validator.dart';
-import 'package:cos_challenge/providers/auth_provider.dart';
+import 'package:cos_challenge/providers/data_provider.dart';
 import 'package:cos_challenge/widgets/progress.dart';
 import 'package:cos_challenge/widgets/terms_of_use.dart';
 import 'package:flutter/foundation.dart';
@@ -78,7 +78,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
     try {
       var e = _emailController.text.trim();
       var p = _passwordController.text;
-      await ref.read(authProvider.notifier).login(e, p);
+      await ref.read(dataProvider.notifier).login(e, p);
     } on ServerException catch (e) {
       _showSnackBar(exception: e);
     } catch (e) {

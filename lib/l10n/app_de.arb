@@ -27,5 +27,9 @@
   "vinEmptyError": "Bitte geben Sie die VIN ein.",
   "vinLengthError": "Eine VIN muss genau 17 Zeichen lang sein.",
   "vinSearchSuccess": "Fahrzeug erfolgreich gefunden!",
-  "vinSearchFailed": "Fahrzeug konnte nicht gefunden werden."
+  "vinSearchFailed": "Fahrzeug konnte nicht gefunden werden.",
+  "vinSearchError": "Fahrzeug konnte nicht gefunden werden. Bitte erneut versuchen in {delaySeconds} Sekunden.",
+  "homeAuthException": "Ihre Session ist abgelaufen, bitte loggen Sie sich erneut ein.",
+  "homeTimeoutException": "Hoppala, unser Server scheint wohl ein Nickerchen zu machen. Versuchen Sie es später noch einmal.",
+  "homeDeserializationException": "Hoppala, die Antwort vom Server konnte nicht gelesen werden, bitte kontaktieren Sie den Support."
 }

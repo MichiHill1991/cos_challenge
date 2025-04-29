@@ -5,7 +5,7 @@ import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart';
 
-class CosUserApiMock extends BaseClient {
+class UserServiceMock extends BaseClient {
   static final _statusCode = <int, Map<String, dynamic>>{
     200: {
       "id": "abcd-efgh-ijgk-mnop",
