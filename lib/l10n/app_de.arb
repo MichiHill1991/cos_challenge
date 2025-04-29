@@ -31,5 +31,10 @@
   "vinSearchError": "Fahrzeug konnte nicht gefunden werden. Bitte erneut versuchen in {delaySeconds} Sekunden.",
   "homeAuthException": "Ihre Session ist abgelaufen, bitte loggen Sie sich erneut ein.",
   "homeTimeoutException": "Hoppala, unser Server scheint wohl ein Nickerchen zu machen. Versuchen Sie es später noch einmal.",
-  "homeDeserializationException": "Hoppala, die Antwort vom Server konnte nicht gelesen werden, bitte kontaktieren Sie den Support."
+  "homeDeserializationException": "Hoppala, die Antwort vom Server konnte nicht gelesen werden, bitte kontaktieren Sie den Support.",
+  "multipleSelectorTitle": "Fahrzeuge gefunden",
+  "multipleSelectorSubTitle": "Es wurden mehrere passende Fahrzeuge gefunden, bitte wählen Sie das passende Model.",
+  "multipleSimilarityHigh": "Hohe Ähnlichkeit",
+  "multipleSimilarityMedium": "Mittlere Ähnlichkeit",
+  "multipleSimilarityLow": "Geringe Ähnlichkeit"
 }

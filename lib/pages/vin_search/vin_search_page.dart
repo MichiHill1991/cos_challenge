@@ -45,39 +45,37 @@ class _HomePageState extends ConsumerState<VinSearchPage> {
           const SizedBox(width: 8),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Form(
-          key: _formKey,
-          child: ListView(
-            children: [
-              Text(
-                _loc.cardTitle,
-                style: Theme.of(context).textTheme.headlineLarge,
+      body: Form(
+        key: _formKey,
+        child: ListView(
+          padding: const EdgeInsets.all(16),
+          children: [
+            Text(
+              _loc.cardTitle,
+              style: Theme.of(context).textTheme.headlineLarge,
+            ),
+            const SizedBox(height: 8),
+            Text(
+              _loc.cardSubtitle,
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            const SizedBox(height: 24),
+            TextFormField(
+              controller: _vinController,
+              decoration: InputDecoration(
+                labelText: _loc.enterVin,
+                border: const OutlineInputBorder(),
               ),
-              const SizedBox(height: 8),
-              Text(
-                _loc.cardSubtitle,
-                style: Theme.of(context).textTheme.bodyMedium,
-              ),
-              const SizedBox(height: 24),
-              TextFormField(
-                controller: _vinController,
-                decoration: InputDecoration(
-                  labelText: _loc.enterVin,
-                  border: const OutlineInputBorder(),
-                ),
-                maxLength: 17,
-                validator: _validateVin,
-              ),
-              const SizedBox(height: 16),
-              ElevatedButton(
-                onPressed: _loading ? null : _onSearchPressed,
-                onLongPress: kDebugMode ? _fillUp : null,
-                child: _loading ? const CosProgress() : Text(_loc.search),
-              ),
-            ],
-          ),
+              maxLength: 17,
+              validator: _validateVin,
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: _loading ? null : _onSearchPressed,
+              onLongPress: kDebugMode ? _fillUp : null,
+              child: _loading ? const CosProgress() : Text(_loc.search),
+            ),
+          ],
         ),
       ),
     );

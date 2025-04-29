@@ -1,9 +1,14 @@
 import 'dart:convert';
 
+import 'package:cos_challenge/utils/color.dart';
+import 'package:flutter/material.dart';
+
 List<MultipleChoices> listFromJson(String str) {
-  return List<MultipleChoices>.from(
+  final list = List<MultipleChoices>.from(
     jsonDecode(str).map((x) => MultipleChoices.fromJson(x)),
   );
+  list.sort((a, b) => b.similarity.compareTo(a.similarity));
+  return list;
 }
 
 class MultipleChoices {
@@ -39,5 +44,17 @@ class MultipleChoices {
       "similarity": similarity,
       "externalId": externalId,
     };
+  }
+
+  IconData getIcon() {
+    if (similarity > 75) return Icons.thumb_up;
+    if (similarity >= 50) return Icons.thumbs_up_down;
+    return Icons.thumb_down;
+  }
+
+  Color getColor() {
+    if (similarity > 75) return BrandColors.successGreen;
+    if (similarity >= 50) return BrandColors.neutral200;
+    return BrandColors.tomato;
   }
 }

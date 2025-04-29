@@ -31,5 +31,10 @@
   "vinSearchError": "Car could not be found. Please try again in {delaySeconds} seconds.",
   "homeAuthException": "Your session has expired, please log in again.",
   "homeTimeoutException": "Oops, our server seems to be taking a nap. Please Try again later.",
-  "homeDeserializationException": "Oops, the response from the server could not be read, please contact support."
+  "homeDeserializationException": "Oops, the response from the server could not be read, please contact support.",
+  "multipleSelectorTitle": "Multiple cars found",
+  "multipleSelectorSubTitle": "Several suitable cars were found, please select the appropriate model.",
+  "multipleSimilarityHigh": "High similarity",
+  "multipleSimilarityMedium": "Medium similarity",
+  "multipleSimilarityLow": "Low similarity"
 }
