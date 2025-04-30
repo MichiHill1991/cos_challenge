@@ -23,9 +23,9 @@ dependencies:
 ### android: "ic_launcher_round"
 ### ios: "AppIcon"
 flutter_icons:
-  ios: false
-  android: "rounded_x"
-  image_path: "assets/app_icon/rounded_x.png"
+  ios: true
+  android: "square"
+  image_path: "assets/app_icon/cos_square.png"
 
 dev_dependencies:
   integration_test:
