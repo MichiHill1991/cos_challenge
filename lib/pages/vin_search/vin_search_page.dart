@@ -39,7 +39,7 @@ class _HomePageState extends ConsumerState<VinSearchPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(_loc.homeTitle),
+        title: Text(_loc.appBarSearch),
         actions: [
           IconButton(icon: const Icon(Icons.logout), onPressed: _logout),
           const SizedBox(width: 8),
@@ -123,7 +123,9 @@ class _HomePageState extends ConsumerState<VinSearchPage> {
   }
 
   void _showSnackBar(String text) {
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(text)));
+    ScaffoldMessenger.of(context)
+      ..hideCurrentSnackBar()
+      ..showSnackBar(SnackBar(content: Text(text)));
   }
 
   Future<void> _logout() async {

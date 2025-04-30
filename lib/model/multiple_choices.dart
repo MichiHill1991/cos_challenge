@@ -53,7 +53,7 @@ class MultipleChoices {
   }
 
   Color getColor() {
-    if (similarity > 75) return BrandColors.successGreen;
+    if (similarity > 75) return BrandColors.limeGreen;
     if (similarity >= 50) return BrandColors.neutral200;
     return BrandColors.tomato;
   }

@@ -1,16 +1,39 @@
-# cos_challenge
+# COS Challenge App
 
-App for CarOnSale Flutter Coding Challenge
+This project was developed as part of a coding challenge. The goal is to demonstrate common UI,
+architecture, and testing concepts in a clean Flutter application.
 
-## Getting Started
+## 🔐 Login Simulation
 
-This project is a starting point for a Flutter application.
+Login is simulated via a mock API client. Each login attempt returns randomized outcomes to reflect:
 
-A few resources to get you started if this is your first Flutter project:
+- Successful login
+- Invalid credentials (`401 Unauthorized`)
+- Faulty request (`400 Bad Request`), etc.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🚘 VIN Lookup
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+After logging in, users can enter and validate a vehicle identification number (VIN).
+
+### The VIN search uses a mocked API client that returns:
+
+- ✅ **Single Message Response**  
+  → Navigates to the **Auction Page** displaying vehicle details.
+
+- 🟰 **Multiple Choice Response**  
+  → Navigates to the **MultipleChoicesPage** where the user selects a matching entry.
+
+- ❌ **Error Message Response**  
+  → Shows a **Snackbar** with an error message based on the response.
+
+### 🎲 Note
+
+The outcome of each search is randomized to simulate and test different UI scenarios.
+
+## 🧪 Testing
+
+The project includes unit, widget, and integration tests:
+
+- Form validation for login and VIN inputs
+- UI tests for error handling and loading states
+- Integration tests for various API outcomes (using the mock client)

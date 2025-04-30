@@ -36,5 +36,9 @@
   "multipleSelectorSubTitle": "Es wurden mehrere passende Fahrzeuge gefunden, bitte wählen Sie das passende Model.",
   "multipleSimilarityHigh": "Hohe Ähnlichkeit",
   "multipleSimilarityMedium": "Mittlere Ähnlichkeit",
-  "multipleSimilarityLow": "Geringe Ähnlichkeit"
+  "multipleSimilarityLow": "Geringe Ähnlichkeit",
+  "appBarLogin": "Anmelden",
+  "appBarSearch": "VIN-Suche",
+  "appBarMultipleChoice": "Mehrere Treffer",
+  "appBarAuction": "Auktionsdetails"
 }

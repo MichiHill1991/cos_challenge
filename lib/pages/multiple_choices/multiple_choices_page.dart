@@ -13,7 +13,7 @@ class MultipleChoicesPage extends StatelessWidget {
     final loc = AppLocalizations.of(context)!;
 
     return Scaffold(
-      appBar: AppBar(title: Text("Selector")),
+      appBar: AppBar(title: Text(loc.appBarMultipleChoice)),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [

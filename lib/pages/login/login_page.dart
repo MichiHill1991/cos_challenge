@@ -30,7 +30,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
     _loc = AppLocalizations.of(context)!;
 
     return Scaffold(
-      appBar: AppBar(title: Text(_loc.login)),
+      appBar: AppBar(title: Text(_loc.appBarLogin)),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Form(
@@ -103,7 +103,8 @@ class _LoginPageState extends ConsumerState<LoginPage> {
   void _showSnackBar({ServerException? exception}) {
     if (!mounted) return;
     var text = exception?.getLoginErrorMessage(context) ?? _loc.loginFailed;
-    var content = SnackBar(content: Text(text));
-    ScaffoldMessenger.of(context).showSnackBar(content);
+    ScaffoldMessenger.of(context)
+      ..hideCurrentSnackBar()
+      ..showSnackBar(SnackBar(content: Text(text)));
   }
 }
