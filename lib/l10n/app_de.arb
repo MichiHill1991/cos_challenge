@@ -40,5 +40,11 @@
   "appBarLogin": "Anmelden",
   "appBarSearch": "VIN-Suche",
   "appBarMultipleChoice": "Mehrere Treffer",
-  "appBarAuction": "Auktionsdetails"
+  "appBarAuction": "Auktionsdetails",
+  "auctionCurrentBit": "Ihr aktuelles Gebot",
+  "auctionAcceptedTitle": "Herzlichen Glückwunsch",
+  "auctionAcceptedSubTitle": "Ihr Angebot wurde akzeptiert",
+  "auctionRejectedTitle": "Ihr Angebot wurde abgeleht",
+  "auctionRejectedFeedback": "Rückmeldung der Verkäufers:",
+  "auctionRejectedAdjustButton": "Angebot anpassen"
 }

@@ -57,7 +57,7 @@ final ThemeData cosTheme = ThemeData(
     style: ElevatedButton.styleFrom(
       backgroundColor: BrandColors.brandButtonBG,
       foregroundColor: BrandColors.black,
-      textStyle: TextStyle(fontWeight: FontWeight.bold),
+      textStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
     ),
   ),
