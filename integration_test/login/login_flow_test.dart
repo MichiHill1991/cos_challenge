@@ -11,19 +11,30 @@ void main() {
         child: MaterialApp(
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
+          locale: Locale("en"),
           home: const LoginPage(),
         ),
       ),
     );
 
+    expect(find.textContaining('Mail address'), findsWidgets);
+    expect(find.textContaining('Password'), findsWidgets);
     expect(find.text('Login'), findsOneWidget);
 
-    // Tap the login button without input
     await tester.tap(find.byType(ElevatedButton));
     await tester.pump();
 
-    // Should show validation errors
-    expect(find.textContaining('E-Mail'), findsWidgets);
-    expect(find.textContaining('Passwort'), findsWidgets);
+    expect(find.textContaining('Please enter your mail address'), findsWidgets);
+    expect(find.textContaining('Please enter password'), findsWidgets);
+
+    /*
+     * Todo:
+     * Make test more deterministic -> current mock endpoint sends random
+     * responses, each test should cover a specific case!
+     *
+     * Idea:
+     * Create for each test a client which can be injected into the UserService
+     * to generate specific responses based on the use case
+     */
   });
 }
