@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:cos_challenge/model/user.dart';
 import 'package:cos_challenge/network/exception.dart';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart';
@@ -11,7 +12,7 @@ class UserService {
 
   static const String baseUrl = 'anyUrl';
 
-  Future<Map<String, dynamic>> login(String email, String password) async {
+  Future<User> login(String email, String password) async {
     final response = await client.post(
       Uri.parse('$baseUrl/login'),
       headers: {'Content-Type': 'application/json'},
@@ -19,7 +20,7 @@ class UserService {
     );
 
     if (response.statusCode == 200) {
-      return jsonDecode(response.body);
+      return User.fromJson(jsonDecode(response.body));
     } else {
       debugPrint("${response.statusCode}: Failed to login: ${response.body}");
       throw ServerException(

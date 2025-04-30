@@ -11,13 +11,10 @@ void main() {
     });
 
     test('Login successful returns user data', () async {
-      final response = await api.login(
-        'michael.hill@mein-bankerl.de',
-        'COS123!',
-      );
+      final user = await api.login('michael.hill@mein-bankerl.de', 'COS123!');
 
-      expect(response['email'], equals('michael.hill@mein-bankerl.de'));
-      expect(response['first_name'], equals('Michael'));
+      expect(user.email, equals('michael.hill@mein-bankerl.de'));
+      expect(user.firstName, equals('Michael'));
     });
 
     test('Login failed returns error message', () async {

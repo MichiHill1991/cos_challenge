@@ -1,5 +1,5 @@
 import 'package:cos_challenge/model/multiple_choices.dart';
-import 'package:cos_challenge/widgets/multiple_choice_car_widget.dart';
+import 'package:cos_challenge/widgets/multiple_choice_car.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 

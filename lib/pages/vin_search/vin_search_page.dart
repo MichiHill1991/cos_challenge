@@ -7,6 +7,7 @@ import 'package:cos_challenge/pages/auction/auction_page.dart';
 import 'package:cos_challenge/pages/multiple_choices/multiple_choices_page.dart';
 import 'package:cos_challenge/providers/data_provider.dart';
 import 'package:cos_challenge/utils/vin_generator.dart';
+import 'package:cos_challenge/widgets/current_auction.dart';
 import 'package:cos_challenge/widgets/progress.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -23,9 +24,10 @@ class VinSearchPage extends ConsumerStatefulWidget {
 class _HomePageState extends ConsumerState<VinSearchPage> {
   final _vinController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-  bool _loading = false;
 
   late AppLocalizations _loc;
+
+  bool _loading = false;
 
   @override
   void dispose() {
@@ -36,6 +38,8 @@ class _HomePageState extends ConsumerState<VinSearchPage> {
   @override
   Widget build(BuildContext context) {
     _loc = AppLocalizations.of(context)!;
+
+    final auction = ref.read(dataProvider.notifier).getAuction();
 
     return Scaffold(
       appBar: AppBar(
@@ -75,6 +79,14 @@ class _HomePageState extends ConsumerState<VinSearchPage> {
               onLongPress: kDebugMode ? _fillUp : null,
               child: _loading ? const CosProgress() : Text(_loc.search),
             ),
+            const SizedBox(height: 24),
+            if (auction != null)
+              Text(
+                "Your current auction",
+                style: Theme.of(context).textTheme.headlineLarge,
+              ),
+            if (auction != null)
+              CurrentAuction(data: auction, onTap: () => _showAuction(auction)),
           ],
         ),
       ),
@@ -130,5 +142,9 @@ class _HomePageState extends ConsumerState<VinSearchPage> {
 
   Future<void> _logout() async {
     await ref.read(dataProvider.notifier).logout();
+  }
+
+  void _showAuction(Success auction) {
+    _navigateTo(AuctionPage(data: auction));
   }
 }

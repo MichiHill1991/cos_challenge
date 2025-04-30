@@ -1,34 +1,53 @@
 import 'package:cos_challenge/model/success.dart';
+import 'package:cos_challenge/providers/data_provider.dart';
 import 'package:cos_challenge/utils/color.dart';
 import 'package:cos_challenge/utils/price_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class AuctionPage extends StatelessWidget {
+class AuctionPage extends ConsumerStatefulWidget {
   final Success data;
 
   const AuctionPage({super.key, required this.data});
 
   @override
+  ConsumerState<AuctionPage> createState() => _AuctionPageState();
+}
+
+class _AuctionPageState extends ConsumerState<AuctionPage> {
+  @override
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context)!;
 
     return Scaffold(
-      appBar: AppBar(title: Text(loc.appBarAuction)),
+      appBar: AppBar(
+        title: Text(loc.appBarAuction),
+        actions: [
+          IconButton(icon: const Icon(Icons.delete_forever), onPressed: _clear),
+          const SizedBox(width: 8),
+        ],
+      ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          Text(data.make, style: Theme.of(context).textTheme.headlineMedium),
+          Text(
+            widget.data.make,
+            style: Theme.of(context).textTheme.headlineMedium,
+          ),
           const SizedBox(height: 2),
-          Text(data.model, style: Theme.of(context).textTheme.headlineSmall),
+          Text(
+            widget.data.model,
+            style: Theme.of(context).textTheme.headlineSmall,
+          ),
           const SizedBox(height: 8),
           Text(
-            data.externalId.toString(),
+            widget.data.externalId.toString(),
             style: Theme.of(context).textTheme.bodySmall,
           ),
           const SizedBox(height: 2),
           Text(
-            data.id.toString(),
+            widget.data.id.toString(),
             style: Theme.of(context).textTheme.bodySmall,
           ),
           const SizedBox(height: 24),
@@ -40,11 +59,11 @@ class AuctionPage extends StatelessWidget {
           ),
           const SizedBox(height: 2),
           Text(
-            PriceUtils.formatEuroPrice(context, data.price),
+            PriceUtils.formatEuroPrice(context, widget.data.price),
             style: Theme.of(context).textTheme.headlineSmall,
           ),
           const SizedBox(height: 24),
-          !data.positiveCustomerFeedback
+          !widget.data.positiveCustomerFeedback
               ? _buildSuccess(context, loc)
               : _buildFeedback(context, loc),
         ],
@@ -106,7 +125,7 @@ class AuctionPage extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleSmall,
               ),
               Text(
-                "\"${data.feedback}\"",
+                "\"${widget.data.feedback}\"",
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
             ],
@@ -122,5 +141,11 @@ class AuctionPage extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  Future<void> _clear() async {
+    await ref.read(dataProvider.notifier).removeSavedAuction();
+    if (!mounted) return;
+    if (Navigator.canPop(context)) Navigator.pop(context);
   }
 }

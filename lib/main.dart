@@ -1,4 +1,3 @@
-import 'package:cos_challenge/pages/auction/auction_page.dart';
 import 'package:cos_challenge/pages/login/login_page.dart';
 import 'package:cos_challenge/pages/vin_search/vin_search_page.dart';
 import 'package:cos_challenge/providers/data_provider.dart';
@@ -20,16 +19,14 @@ class MyApp extends ConsumerWidget {
     final authState = ref.watch(dataProvider);
 
     Widget page = LoginPage();
-    if (authState.auction != null) {
-      page = AuctionPage(data: authState.auction!);
-    } else if (authState.isAuthenticated) {
+    if (authState.isAuthenticated) {
       page = VinSearchPage();
     }
 
     return MaterialApp(
       title: 'COS Challenge',
       theme: cosTheme,
-      locale: Locale('de'),
+      locale: Locale('en'),
       supportedLocales: const [Locale('de'), Locale('en')],
       localizationsDelegates: const [
         AppLocalizations.delegate,

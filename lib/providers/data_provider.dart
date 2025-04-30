@@ -54,10 +54,9 @@ class DataNotifier extends StateNotifier<DataState> {
 
   Future<void> login(String email, String password) async {
     final api = UserService(client: UserServiceMock());
-    final userMap = await api.login(email, password);
+    final user = await api.login(email, password);
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(CosConstants.prefsUser, jsonEncode(userMap));
-    final user = User.fromJson(userMap);
+    await prefs.setString(CosConstants.prefsUser, jsonEncode(user.toJson()));
     state = DataState(isAuthenticated: true, user: user);
   }
 
@@ -75,8 +74,20 @@ class DataNotifier extends StateNotifier<DataState> {
     final api = VinSearchService(client: CosChallenge.httpClient);
     final result = await api.searchVin(vin, state.user!.id);
     if (result is Success) {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString(CosConstants.prefsAuction, jsonEncode(result));
       state = state.copyWith(auction: result);
     }
     return result;
+  }
+
+  Success? getAuction() {
+    return state.auction;
+  }
+
+  Future<void> removeSavedAuction() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.remove(CosConstants.prefsAuction);
+    state = DataState(isAuthenticated: state.isAuthenticated, user: state.user);
   }
 }
